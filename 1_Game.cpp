@@ -1,4 +1,5 @@
 #include<iostream>
+#include<conio.h>
 #include<string.h>
 using namespace std;
 class game{
@@ -19,15 +20,24 @@ class game{
     void hangman()
     {
         if(n==0){
-        cout<<" ____________________"<<endl;
+            cout<<" ___H A N G M A N____ \n";
+            cout<<"|                    |\n";  
+            cout<<"|                    |\n";
+            cout<<"|                    |\n";
+            cout<<"|                    |\n";
+            cout<<"|____________________|\n";
+        }
+
+        if(n==1){
+        cout<<" ___H A N G M A N____ \n";
         cout<<"|         |          |"<<endl;  
         cout<<"|                    |"<<endl;
         cout<<"|                    |"<<endl;
         cout<<"|                    |"<<endl;
         cout<<"|____________________|"<<endl;}
        
-        if(n==1){
-        cout<<" ____________________"<<endl;
+        if(n==2){
+        cout<<" ___H A N G M A N____ \n";
         cout<<"|         |          |"<<endl;  
         cout<<"|         O          |"<<endl;
         cout<<"|                    |"<<endl;
@@ -35,40 +45,40 @@ class game{
         cout<<"|____________________|"<<endl;}     
         
         
-        if(n==2){
-        cout<<" ____________________"<<endl;
+        if(n==3){
+        cout<<" ___H A N G M A N____ \n";
         cout<<"|         |          |"<<endl;  
         cout<<"|         O          |"<<endl;
         cout<<"|        /           |"<<endl;
         cout<<"|                    |"<<endl;
         cout<<"|____________________|"<<endl;}
         
-        if(n==3){
-        cout<<" ____________________"<<endl;
+        if(n==4){    
+        cout<<" ___H A N G M A N____ \n";
         cout<<"|         |          |"<<endl;  
         cout<<"|         O          |"<<endl;
         cout<<"|        /||         |"<<endl;
         cout<<"|                    |"<<endl;
         cout<<"|____________________|"<<endl;}
         
-        if(n==4){
-        cout<<" ____________________"<<endl;
+        if(n==5){
+        cout<<" ___H A N G M A N____ \n";
         cout<<"|         |          |"<<endl;  
         cout<<"|         O          |"<<endl;
         cout<<"|        /||\\\        |"<<endl;
         cout<<"|                    |"<<endl;
         cout<<"|____________________|"<<endl;}
         
-        if(n==5){
-        cout<<" ____________________"<<endl;
+        if(n==6){
+        cout<<" ___H A N G M A N____ \n";
         cout<<"|         |          |"<<endl;  
         cout<<"|         O          |"<<endl;
         cout<<"|        /||\\\        |"<<endl;
         cout<<"|         /          |"<<endl;
         cout<<"|____________________|"<<endl;}
         
-        if(n==6){
-        cout<<" ____________________"<<endl;
+        if(n==7){
+        cout<<" ___H A N G M A N____ \n";
         cout<<"|         |          |"<<endl;  
         cout<<"|         O          |"<<endl;
         cout<<"|        /||\\\        |"<<endl;
@@ -79,6 +89,7 @@ class game{
     void begin(string temp)
     {
         cout<<"------LEVEL "<<level<<"------\n";
+        cout<<"------SCORE "<<score<<"------\n";
         string temp1;
         while(1){
         for(int i=0;i<temp.size();i++)
@@ -106,26 +117,27 @@ class game{
 int main()
 {
     game a;
-    cout<<" ________LET THE GAME BEGIN_______\n";
-    cout<<"|                                 |\n";  
-    cout<<"|                                 |\n";
-    cout<<"|                                 |\n";
-    cout<<"|                                 |\n";
-    cout<<"|_________________________________|\n";
     string hm[10]={"CAR","MANGO","ORANGE","HELP","COMPUTER","PHONE","ALONE","INTERNET","BIKE","CLASS"} ;
     for(int i=0;i<10;i++)
-    {
+    { 
+    system("cls");
+    a.hangman();    
     a.begin(hm[i]);
     if(a.n>6)
     {
+    system("cls");
+    a.hangman();      
     cout<<"YOU FAIL\n";
     cout<<"THANKYOU FOR PLAYING\n";
+    getch();
+    system("cls");
     return 0;
     }
-    a.result();    
     }
-    cout<<"WOOHOO YOU WON\n";
+    cout<<"          WOOHOO YOU WON\n";
     cout<<"       THANKYOU FOR PLAYING\n";
+    getch();
+    system("cls");
 }
 /*
   ____________________
